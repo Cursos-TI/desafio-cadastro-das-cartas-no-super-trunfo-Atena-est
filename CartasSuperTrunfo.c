@@ -8,7 +8,7 @@ int main() {
     char populacaovalor[20] = "milhões";
     float area = 1.26;
     char extensaoarea[10]= "K km2";
-    float pib = 3.6;
+    float pib = 3.59;
     int turismo = 39;
 
     printf("Código da Carta: %s%d\n", inicial,codigo);
