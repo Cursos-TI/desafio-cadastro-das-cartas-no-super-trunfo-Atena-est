@@ -1,5 +1,9 @@
 #include <stdio.h>
 int main() {
+
+    //Desafio: nível novato
+    //Criando as Cartas do Super Trunfo
+
     //Carta 1
     int codigo = 1;
     char estado[50] = "RIO DE JANEIRO"; 
@@ -13,14 +17,7 @@ int main() {
     char pib2 [15]= "bilhões";
     int turismo = 39;
 
-    printf("Código da Carta: %s%d\n", inicial,codigo);
-    printf("Estado: %s\n",estado);
-    printf("Cidade: %s\n", nome);
-    printf("População: %f %s\n", populacao,populacaovalor);
-    printf("Área: %f%s\n",area, extensaoarea);
-    printf("PIB: %f %s\n",pib, pib2);
-    printf("Pontos Turisticos:%d\n",turismo);
-
+  
     //Carta2
     int codigo2 = 1;
     char estado2[50] = "RIO GRANDE DO SUL"; 
@@ -34,13 +31,27 @@ int main() {
     char pib4 [15]= "bilhões";
     int turismo2 = 40;
     
-    printf("Código da Carta: %s%d\n", inicial2,codigo2);
-    printf("Estado: %s\n",estado2);
-    printf("Cidade: %s\n", nome2);
-    printf("População: %f %s\n", populacao2,populacaovalor2);
-    printf("Área2: %f%s\n",area2, extensaoarea2);
-    printf("PIB: %f %s\n",pib3, pib4);
-    printf("Pontos Turisticos:%d\n",turismo2);
+    //Comparando Cartas do Super Trunfo
+
+    float densidadeCarta1, pibPerCapitaCarta1, densidadeCarta2, pibPerCapitaCarta2;
+  
+    densidadeCarta1 = populacao/area;
+    pibPerCapitaCarta1 = pib/populacao;
+    densidadeCarta2 = populacao2/area2;
+    pibPerCapitaCarta2 = pib3/populacao2;
+
+    printf(" o pib per capita da carta1 é : %f\n", pibPerCapitaCarta1);
+    printf(" o pib per capita da carta2 é : %f\n", pibPerCapitaCarta2);
+
+    if(pibPerCapitaCarta1 > pibPerCapitaCarta2){
+        printf ("carta 1 Rio de Janeiro venceu");
+       
+    }else {
+        printf ("carta 2 Rio Grande do Sul venceu");
+
+    }
+
+    
     return 0;
 
 }
