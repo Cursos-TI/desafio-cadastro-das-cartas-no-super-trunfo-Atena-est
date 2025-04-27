@@ -1,4 +1,6 @@
 #include <stdio.h>
+#include <string.h>
+
 int main()
 {
 
@@ -6,44 +8,122 @@ int main()
     // Criando as Cartas do Super Trunfo
 
     // Carta 1
-    int codigo = 1;
-    char estado[50] = "RIO DE JANEIRO";
-    char inicial[3] = "A0";
-    char nome[50] = "Rio de Janeiro";
-    float populacao = 6.21;
-    char populacaovalor[20] = "milhões";
-    float area = 1.26;
-    char extensaoarea[10] = "K km2";
-    float pib = 350;
-    char pib2[15] = "bilhões";
-    int turismo = 40;
+    char estado[1];
+    char codigo[1];
+    char cidade[15];
+    float populacao;
+    float area;
+    float pib;
+    int turismo;
 
     // Carta2
-    int codigo2 = 1;
-    char estado2[50] = "RIO GRANDE DO SUL";
-    char inicial2[3] = "B0";
-    char nome2[50] = "Gramado";
-    float populacao2 = 40.134;
-    char populacaovalor2[20] = "mil";
-    float area2 = 236.83;
-    char extensaoarea2[10] = "K km2";
-    float pib3 = 2.7;
-    char pib4[15] = "bilhões";
-    int turismo2 = 40;
-
-    // Comparando Cartas do Super Trunfo
-
-    float densidadeCarta1, pibPerCapitaCarta1, densidadeCarta2, pibPerCapitaCarta2;
+    char estado2[1];
+    char codigo2[1];
+    char cidade2[15];
+    float populacao2;
+    float area2;
+    float pib2;
+    int turismo2;
+   
     int itemMenu1, atributo1;
     int atributo2;
     float somaCarta1, somaCarta2, valorAtributo1Carta1, valorAtributo2Carta1, valorAtributo1Carta2, valorAtributo2Carta2;
 
-    densidadeCarta1 = populacao / area;
-    pibPerCapitaCarta1 = pib / populacao;
-    densidadeCarta2 = populacao2 / area2;
-    pibPerCapitaCarta2 = pib3 / populacao2;
+    // cadastro das cartas
+    printf("Super Trunfo 14 15\n");
+    printf("Precisamos cadastrar duas cartas para o jogo. Vamos lá!\n");
+    // carta 1
+    printf("Cadastro da primeira carta:\n");
+    printf("Escolha uma letra entre A e H para representar o Estado:\n");
+    scanf("%c", &estado);
 
-    printf("Super Trunfo \n");
+    for(int i=0; *estado > 'H' && *estado > 'h'; i++){
+        printf("Escolha uma letra entre A e H para representar o Estado:\n");
+        scanf("%c", &estado);
+        scanf("%c", &estado);
+    }
+ 
+    printf("Digite um número de 1 a 4:\n");
+    scanf(" %c", &codigo);
+
+    for(int i=0; *codigo != '1' && *codigo != '2' && *codigo != '3' && *codigo != 4; i++){
+        printf("Digite um número de 1 a 4:\n");
+        scanf(" %c", &codigo);
+    }
+    
+    printf("Escreva o nome da cidade:\n");
+    scanf("%s", &cidade);
+    printf("Insira o valor correspondente a população:\n");
+    scanf("%f", &populacao);
+    printf("Insira o valor correspondente a area:\n");
+    scanf("%f", &area);
+    printf("Insira o valor correspondente ao Pib:\n");
+    scanf("%f", &pib);
+    printf("Insira o número de pontos turísticos:\n");
+    scanf("%d", &turismo);
+
+    // Carta 2
+    printf("\n");
+    printf("Cadastro da Segunda carta:\n");
+    printf("Escolha uma letra entre A e H para representar o Estado:\n");
+    scanf("%c", &estado2);
+    scanf("%c", &estado2);
+    for(int i=0; *estado2 > 'H' && *estado2 > 'h'; i++){
+        printf("Escolha uma letra entre A e H para representar o Estado:\n");
+        scanf("%c", &estado2);
+        scanf("%c", &estado2);
+    }
+    printf("Digite um número de 01 a 10:\n");
+    scanf("%s", &codigo2);
+
+    for(int i=0; *codigo2 != '1' && *codigo2 != '2' && *codigo2 != '3' && *codigo2 != 4; i++){
+        printf("Digite um número de 1 a 4:\n");
+        scanf(" %c", &codigo2);
+    }
+
+    printf("Escreva o nome da cidade:\n");
+    scanf("%s", &cidade2);
+    printf("Insira o valor correspondente a população:\n");
+    scanf("%f", &populacao2);
+    printf("Insira o valor correspondente a area:\n");
+    scanf("%f", &area2);
+    printf("Insira o valor correspondente ao Pib:\n");
+    scanf("%f", &pib2);
+    printf("Insira o número de pontos turísticos:\n");
+    scanf("%d", &turismo2);
+    printf("\n");
+
+    // Exibição das cartas:
+
+    printf("Dados da Carta 1:\n");
+    printf("Letra do Estado: %s\n", estado);   
+    printf("codigo: %.*s%s \n", 1, estado,codigo);
+    printf("cidade: %s\n", cidade);
+    printf("populacao: %f\n", populacao);
+    printf("area: %f km²\n", area);
+    printf("pib: %f bilhões de Reais\n", pib);
+    printf("turismo: %d\n", turismo);
+    printf("Densidade Populacional: %f hab/km²\n", (populacao/area));
+    printf("Pib Per Capita: %f reais\n", (pib/populacao));
+
+    printf("\n");
+
+    printf("Dados da Carta 2:\n");
+    printf("Letra do Estado: %s\n", estado2);
+    printf("codigo: %.*s%s \n", 1, estado2,codigo2);
+    printf("cidade: %s\n", cidade2);
+    printf("populacao: %f\n", populacao2);
+    printf("area: %f Km²\n", area2);
+    printf("pib: %f bilhões de Reais\n", pib2);
+    printf("turismo: %d\n", turismo2);
+    printf("Densidade Populacional: %f hab/km²\n", (populacao2/area2));
+    printf("Pib Per Capita: %f reais\n", (pib2/populacao2));
+
+    printf("\n");
+    printf("Agora vamos iniciar o jogo!!!!");
+    printf("\n");
+
+    // jogo
     printf("Escolha o número do primeiro atributo entre as opções abaixo:\n");
     printf("1 - Populaçao\n");
     printf("2 - Area\n");
@@ -150,12 +230,12 @@ int main()
                 break;
 
             case 3:
-                printf("A densidade da carta 1 é: %f\n", densidadeCarta1);
-                printf("A densidade da carta 2 é : %f\n", densidadeCarta2);
-                (densidadeCarta1 == densidadeCarta2) ? printf("A Rodada 1 Empatou!!!\n") : (densidadeCarta1 < densidadeCarta2) ? printf("O vencedor da rodada 1 é a carta 1\n")
+                printf("A densidade da carta 1 é: %f\n",  (populacao/area));
+                printf("A densidade da carta 2 é : %f\n",  (populacao2/area2));
+                ( (populacao/area) ==  (populacao2/area2)) ? printf("A Rodada 1 Empatou!!!\n") : ( (populacao/area) <  (populacao2/area2)) ? printf("O vencedor da rodada 1 é a carta 1\n")
                                                                                                                                : printf("O vencedor da rodada 1 é a carta 2\n");
-                valorAtributo1Carta1 = densidadeCarta1;
-                valorAtributo1Carta2 = densidadeCarta2;
+                valorAtributo1Carta1 =  (populacao/area);
+                valorAtributo1Carta2 =  (populacao2/area2);
                 break;
 
             case 4:
@@ -168,12 +248,12 @@ int main()
                 break;
 
             case 5:
-                printf("O valor do PIB per capita da carta 1 é: %f\n", pibPerCapitaCarta1);
-                printf("O valor do PIB per capita da carta 2 é: %f\n", pibPerCapitaCarta2);
-                (pibPerCapitaCarta1 == pibPerCapitaCarta2) ? printf("A Rodada 1 Empatou!!!\n") : (pibPerCapitaCarta1 > pibPerCapitaCarta2) ? printf("O vencedor da rodada 1 é a carta 1\n")
+                printf("O valor do PIB per capita da carta 1 é: %f\n", (pib/populacao));
+                printf("O valor do PIB per capita da carta 2 é: %f\n", (pib2/populacao2));
+                ((pib/populacao) == (pib2/populacao2)) ? printf("A Rodada 1 Empatou!!!\n") : ((pib/populacao) > (pib2/populacao2)) ? printf("O vencedor da rodada 1 é a carta 1\n")
                                                                                                                                            : printf("O vencedor da rodada 1 é a carta 2\n");
-                valorAtributo1Carta1 = pibPerCapitaCarta1;
-                valorAtributo1Carta2 = pibPerCapitaCarta2;
+                valorAtributo1Carta1 = (pib/populacao);
+                valorAtributo1Carta2 = (pib2/populacao2);
                 break;
 
             default:
@@ -205,12 +285,12 @@ int main()
                 break;
 
             case 3:
-                printf("A densidade da carta 1 é: %f\n", densidadeCarta1);
-                printf("A densidade da carta 2 é : %f\n", densidadeCarta2);
-                (densidadeCarta1 == densidadeCarta2) ? printf("A Rodada 3 Empatou!!!\n") : (densidadeCarta1 < densidadeCarta2) ? printf("O vencedor da rodada 3 é a carta 1\n")
+                printf("A densidade da carta 1 é: %f\n", (populacao/area));
+                printf("A densidade da carta 2 é : %f\n", (populacao2/area2));
+                ((populacao/area) == (populacao2/area2)) ? printf("A Rodada 3 Empatou!!!\n") : ((populacao/area) < (populacao2/area2)) ? printf("O vencedor da rodada 3 é a carta 1\n")
                                                                                                                                : printf("O vencedor da rodada 3 é a carta 2\n");
-                valorAtributo2Carta1 = densidadeCarta1;
-                valorAtributo2Carta2 = densidadeCarta2;
+                valorAtributo2Carta1 = (populacao/area);
+                valorAtributo2Carta2 = (populacao2/area2);
                 break;
 
             case 4:
@@ -223,12 +303,12 @@ int main()
                 break;
 
             case 5:
-                printf("O valor do PIB per capita da carta 1 é: %f\n", pibPerCapitaCarta1);
-                printf("O valor do PIB per capita da carta 2 é: %f\n", pibPerCapitaCarta2);
-                (pibPerCapitaCarta1 == pibPerCapitaCarta2) ? printf("A Rodada 2 Empatou!!!\n") : (pibPerCapitaCarta1 > pibPerCapitaCarta2) ? printf("O vencedor da rodada 2 é a carta 1\n")
+                printf("O valor do PIB per capita da carta 1 é: %f\n", (pib/populacao));
+                printf("O valor do PIB per capita da carta 2 é: %f\n", (pib2/populacao2));
+                ((pib/populacao) == (pib2/populacao2)) ? printf("A Rodada 2 Empatou!!!\n") : ((pib/populacao) > (pib2/populacao2)) ? printf("O vencedor da rodada 2 é a carta 1\n")
                                                                                                                                            : printf("O vencedor da rodada 2 é a carta 2\n");
-                valorAtributo2Carta1 = pibPerCapitaCarta1;
-                valorAtributo2Carta2 = pibPerCapitaCarta2;
+                valorAtributo2Carta1 = (pib/populacao);
+                valorAtributo2Carta2 = (pib2/populacao2);
                 break;
 
             default:
